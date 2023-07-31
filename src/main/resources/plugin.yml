@@ -1,0 +1,5 @@
+name: command-listening
+version: '${project.version}'
+main: cn.wkt.command_listening.CommandListening
+authors: [KleinBlue_]
+loadbefore: [LuckPerms]
