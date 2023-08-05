@@ -1,5 +1,16 @@
 name: command-listening
 version: '${project.version}'
 main: cn.wkt.command_listening.CommandListening
-authors: [KleinBlue_]
-loadbefore: [LuckPerms]
+authors: [ KleinBlue_ ]
+loadbefore: [ LuckPerms ]
+
+
+commands:
+  addOp:
+    description: 添加op白名单
+    aliases:
+      - reload
+      - add
+      - delete
+    permission: op
+    permission-message: You do not have permission!

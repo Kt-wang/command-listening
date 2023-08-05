@@ -4,7 +4,6 @@ import cn.wkt.command_listening.util.LuckPermsUtils;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.Node;
 import net.luckperms.api.node.NodeType;
-import org.bukkit.BanEntry;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -50,19 +49,9 @@ public class PlayerCommandListening implements Listener {
                 BanList banList = Bukkit.getBanList(BanList.Type.NAME);
                 String msg = "检测到你的权限有问题 请联系管理员";
                 banList.addBan(name, msg, null, "KleinBlue_");
-                kick(name, msg);
+                LuckPermsUtils.kick(name, msg, false);
             }
         }
     }
 
-    /**
-     * @param name 玩家名字 提出玩家
-     */
-    private void kick(String name, String message) {
-        BanList banList = Bukkit.getBanList(BanList.Type.NAME);
-        BanEntry entry = banList.getBanEntry(name);
-        if (null != entry) {
-            Bukkit.getServer().getPlayer(name).kickPlayer(message);
-        }
-    }
 }
