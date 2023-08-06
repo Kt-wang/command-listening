@@ -27,7 +27,7 @@ public final class CommandListening extends JavaPlugin {
         config = YamlConfiguration.loadConfiguration(configFile);
 
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new PlayerCommandListening(), this);
+        getServer().getPluginManager().registerEvents(new PlayerCommandListening(this), this);
         getServer().getPluginManager().registerEvents(new PlayerGameModeChangeListening(this), this);
 
         // 注册命令
