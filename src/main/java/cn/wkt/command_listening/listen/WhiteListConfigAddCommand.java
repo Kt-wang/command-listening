@@ -43,8 +43,13 @@ public class WhiteListConfigAddCommand implements CommandExecutor {
         } else if (args[0].equalsIgnoreCase("reload")) {
             reload(sender);
             return true;
+        }else {
+            sender.sendMessage("");
+            sender.sendMessage("addOp add player[] 可将多名玩家添加至op白名单");
+            sender.sendMessage("addOp delete player[] 可将多名玩家从op白名单删除");
+            sender.sendMessage("addOp reload 重载配置文件");
+            return true;
         }
-        return false;
     }
 
     private void add(CommandSender sender, String[] args) {
